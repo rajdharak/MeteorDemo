@@ -1,4 +1,7 @@
-import { Main } from './imports/server-main/main';
-
-let mainInstance = new Main();
-mainInstance.start();
+import {loadParties} from './imports/fixtures/parties';
+import {Meteor} from 'meteor/meteor';
+ 
+Meteor.startup(() => {
+  // load initial Parties
+  loadParties();
+});
